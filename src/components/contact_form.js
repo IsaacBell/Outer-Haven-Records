@@ -48,16 +48,13 @@ var ContactForm = React.createClass({
     else {
       console.log('Failed to submit')
       if (this.state.errors.fullName) { 
-        this.state.fullName  = this.state.errors.fullName
-        $('#fullName').val(this.state.fullName)
+        $('#fullName').val(this.state.errors.fullName)
       }
       if (this.state.errors.email) {
-        this.state.email  = this.state.errors.email
-        $('#email').val(this.state.email)
+        $('#email').val(this.state.errors.email)
       }      
       if (this.state.errors.message) {
-        this.state.message  = this.state.errors.message
-        $('#message').val(this.state.message)
+        $('#message').val(this.state.errors.message)
       }
     }
   }
@@ -124,7 +121,6 @@ var ContactForm = React.createClass({
           id="fullName" 
           name="fullName" 
           placeholder="John Doe"
-          value={!this.state.errors.fullName ? this.state.errors.fullName : ''}
           style={!this.state.errors.fullName ? this.styles.defaultTextColor : this.styles.redText}
           onChange={this.handleNameChange}
         />
@@ -134,7 +130,6 @@ var ContactForm = React.createClass({
           id="email" 
           name="email" 
           placeholder="jane@doe.com"
-          value={!this.state.errors.email ? this.state.errors.email : ''}
           style={!this.state.errors.email ? this.styles.defaultTextColor : this.styles.redText}
           onChange={this.handleEmailChange}
         />
@@ -144,7 +139,6 @@ var ContactForm = React.createClass({
         <textarea 
           id="message" 
           name="message"
-          value={!this.state.errors.message ? this.state.errors.message : ''}
           style={!this.state.errors.message ? this.styles.defaultTextColor : this.styles.redText}
           onChange={this.handleMessageChange}>
         </textarea> 

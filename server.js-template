@@ -1,0 +1,45 @@
+const path          = require('path')
+const express       = require('express')
+const nodemailer    = require("nodemailer")
+const smtpTransport = require('nodemailer-smtp-transport');
+
+var transport = nodemailer.createTransport(smtpTransport({
+  host: "smtp.gmail.com",
+  secureConnection: false, // use SSL
+  port: 465,               // port for secure SMTP
+  auth: {
+    user: "username@gmail.com",
+    pass: "password"
+  }
+}))
+
+module.exports = {
+  app: function() {
+    const app = express()
+    const indexPath = path.join(__dirname, 'index.html')
+    const publicPath = express.static(path.join(__dirname, 'public'))
+
+    app.use('/public', publicPath)
+    app.get('/', function (_, res) { res.sendFile(indexPath) })
+    app.get('/mail', function(req,res){
+      var mailOptions = {
+        to : 'contact.outerhaven@gmail.com',
+        subject : req.query.subject,
+        text : req.query.text
+      }
+      console.log(mailOptions)
+      transport.sendMail(mailOptions, function(error, response){
+        if(error){
+          console.log(error)
+          res.end("error")
+        }else{
+          console.log("Message sent: " + response.message)
+          res.end("sent")
+        }
+      })
+    })
+
+    return app
+  }
+}
+

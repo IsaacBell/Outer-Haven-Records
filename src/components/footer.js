@@ -14,7 +14,7 @@ class Footer extends React.Component {
   render() {
     return(<section className="footer">
       <span className="social">
-        <a href="mailto:contact.outerhaven@gmail.com" target="_blank">
+        <a href="mailto:contact.outerhaven@gmail.com?Subject=Website%20Contact%20Request">
           <img 
             src="https://s3.amazonaws.com/outer-haven/icons/new-message.png" alt="Email Icon" 
             style={iconStyle(100, 75)}
@@ -22,7 +22,7 @@ class Footer extends React.Component {
         </a>
       </span>
       <span className="social">
-        <a href="https://vimeo.com/user53410088" target="_blank">
+        <a href="https://vimeo.com/outerhaven" target="_blank">
           <img 
             src="https://s3.amazonaws.com/outer-haven/icons/vimeo-logo.png" alt="Vimeo Icon" 
             style={iconStyle(100, 77.5)}
@@ -30,7 +30,7 @@ class Footer extends React.Component {
         </a>
       </span>
       <span className="social">
-        <a href="#" target="_blank">
+        <a href="https://www.facebook.com/outerhavenrecords" target="_blank">
           <img 
             src="https://s3.amazonaws.com/outer-haven/icons/fb2.png" alt="Facebook Icon" 
             style={iconStyle(85, 90, 7.5)}
@@ -39,7 +39,7 @@ class Footer extends React.Component {
       </span>
 
       <span className="social">
-        <a href="#" target="_blank">
+        <a href="https://soundcloud.com/outerhavenrecords" target="_blank">
           <img 
             src="https://s3.amazonaws.com/outer-haven/icons/soundcloud-logo.png" alt="Soundcloud Icon" 
             style={iconStyle(100, 77.5)}
@@ -47,7 +47,7 @@ class Footer extends React.Component {
         </a>
       </span>
       <span className="social">
-        <a href="#" target="_blank">
+        <a href="https://www.youtube.com/channel/UCfZ2VCE_rcXRwDUeQaz1WEg" target="_blank">
           <img 
             src="https://s3.amazonaws.com/outer-haven/icons/yt.png" alt="Youtube Icon" 
             style={iconStyle(87.5, 95, 5)}
@@ -63,7 +63,7 @@ class Footer extends React.Component {
         </a>
       </span>
       <span className="social">
-        <a href="#" target="_blank">
+        <a href="https://outerhavenrecords.bandcamp.com/" target="_blank">
           <img 
             src="https://s3.amazonaws.com/outer-haven/icons/bandcamp-logo.png" alt="Bandcamp Icon" 
             style={iconStyle(70, 75, 15)}
